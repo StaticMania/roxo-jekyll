@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<!-- start: blog details -->
+<section class="site-blog details">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <article class="site-blog-details">
+          <p><span>{{ page.date | date: "%-d %B %Y" }}</span> by <span>{{ page.author }}</span></p>
+          <h2 class="blog-title">{{ page.title }}</h2>
+          <img class="feature-image" src="{{ page.feature_image | absolute_url }}" alt="blog-details-image">
+          {{ content }}
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

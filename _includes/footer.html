@@ -1,0 +1,71 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo"><a href="{{ site.baseurl }}"><img src="{{ '/images/logo-footer.png' | absolute_url }}" alt="logo-footer"></a></div>
+      </div>
+      {% assign footerInfo = site.footer.contactInfo %}
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ footerInfo.title }}</h5>
+          <p class="site-footer-widget-description">
+            {{ footerInfo.address }}
+            <br>
+            <a href="tel:{{ footerInfo.phone }}">{{ footerInfo.phone }}</a>
+            <br>
+            <a href="mailto:{{ footerInfo.email }}">{{ footerInfo.email }}</a>
+          </p>
+        </div>
+      </div>
+      {% assign footerInfo = nill %}
+      {% assign sitemap = site.footer.sitemap %}
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ sitemap.title }}</h5>
+          <ul class="site-footer-widget-links">
+            {% for link in sitemap.link %}
+            <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% assign sitemap = nill %}
+      {% assign social = site.footer.social %}
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ social.title }}</h5>
+          <ul class="site-footer-widget-links">
+            {% for link in social.link %}
+              <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% assign social = nill %}
+      {% assign service = site.footer.service %}
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ service.title }}</h5>
+          <p class="site-footer-widget-description">
+            {{ service.description }}
+          </p>
+        </div>
+      </div>
+      {% assign service = nill %}
+      <div class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top">
+          <img src="{{ "images/to-top.svg" | absolute_url }}" alt="back-to-top">
+          <p>
+            I want to 
+            <br>
+            visit again
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ '/js/formHandler.js' | absolute_url }}"></script>
+<script src="{{ '/js/vendor.js' | absolute_url }}"></script>
+<script src="{{ '/js/script.js' | absolute_url }}"></script>

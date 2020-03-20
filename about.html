@@ -1,0 +1,120 @@
+---
+layout: default
+title: About
+permalink: /about/
+heading : "WE ARE ROXO DESIGN. AN AWARD-WINNING CREATIVE STUDIO IN FLORIDA."
+description : "We are specialized in developing forward-thinking brand identities, websites, illustration and animation for all types of customers. And we do this by bringing our customers through each phase of the design process with us."
+expertise_title: "Expertise"
+expertise_sectors: ["Customer Experience Design", "Digital Products", "Development", "Campaign & Content", "Employer Branding", "Animation & Motion Graphics", "Packaging & Product Design", "Retail & Spacial", "Print & Editorial Design", "Concept/Text", "Information Design"]
+---
+
+<!-- start: about header section -->
+<section class="site-about-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-about-wrapper">
+          <div class="site-about-company">
+            <h1>
+              {{ page.heading }}
+            </h1>
+          </div>
+          <div class="site-about-description">
+            <p>
+              {{ page.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: about header section -->
+
+<!-- start: expertise section -->
+<section class="site-expertise">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="section-title">
+          <h2>{{ page.expertise_title }}</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        {% assign expertises = page.expertise_sectors %}
+        <ul class="site-expertise-list">
+          {%- for expertise in expertises -%}
+            <li>{{ expertise }}</li>
+          {%- endfor -%}
+        </ul>
+        {% assign expertises = nill %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: expertise section -->
+
+{%- if site.data.clients.enable -%}
+{%- assign clients = site.data.clients -%}
+<!-- start: clients section -->
+<section class="site-client">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2>{{ clients.title }}</h2>
+        </div>
+        <div class="site-client-wrapper">
+          {%- for logo in clients.client_logos -%}
+            <div class="site-client-item">
+              <img src="{{ logo | absolute_url }}" alt="client-logo">
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: clients section -->
+{%- assign clients = nill -%}
+{%- endif -%}
+
+{%- if site.data.team.enable -%}
+{%- assign team = site.data.team -%}
+<!-- start: team section -->
+<section class="site-team">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2>
+            {{ team.title }}
+          </h2>
+        </div>
+      </div>
+      {%- for member in team.members -%}
+      <div class="col-lg-4 col-md-6">
+        <div class="site-team-member">
+          <div class="site-team-member-image">
+            <img src="{{ member.image | absolute_url }}" alt="team-member-image">
+          </div>
+          <div class="site-team-member-content">
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.designation }}</p>
+            <ul class="site-team-member-social">
+              <li><a href="{{ member.medium }}"><i class="fa fa-medium"></i></a></li>
+              <li><a href="{{ member.linkedIn }}"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="{{ member.instagram }}"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<!-- end: team section -->
+{%- assign team = nill -%}
+{%- endif -%}
+
+{%- include call-to-action.html -%}

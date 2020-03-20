@@ -1,0 +1,51 @@
+---
+layout: default
+title: Roxo Blog
+description: By fusing strategy & design we help our partners build their brands, drive business, & stand out from the noise in saturated markets! Follow our blog for the latest case studies and projects.
+permalink: '/blog'
+---
+
+<!-- start: blog header -->
+<section class="site-blog-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1>{{ page.title }}</h1>
+        <p>
+          {{ page.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: blog header -->
+
+<!-- start: blog section -->
+<section class="site-blog">
+  <div class="container">
+    <div class="row">
+      {%- for post in site.posts -%}
+      {%- if post.type contains 'blog' -%}
+      <div class="col-lg-6">
+        <article class="site-blog-post">
+          <div class="site-blog-post-thumb">
+            <img src="{{ post.image | absolute_url }}" alt="post-thumb">
+          </div>
+          <div class="site-blog-post-content">
+            <span>{{ post.date | date: "%-d %B %Y" }}</span>
+            <h3><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
+            <p>
+              {{ post.content | strip_html | truncatewords: 20 }}
+            </p>
+            <a href="{{ post.url | absolute_url }}" class="read-more">read more</a>
+          </div>
+        </article>
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<!-- end: blog section -->
+
+{%- include call-to-action.html -%}

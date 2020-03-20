@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="{{ site.baseurl }}">
+      <img src="{{ '/images/logo.png' | absolute_url }}" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+        {% assign nav_list = site.navigation %}
+        {% for node in nav_list %}
+          {% if node.tag == "special" %}
+            <li class="nav-item">
+              <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="{{ node.url }}">
+                <span class="btn-area">
+                  <span data-text="{{ node.title }}">
+                    {{ node.title }}
+                  </span>
+                </span>
+              </a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ node.url }}">{{ node.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        {% assign nav_list = nill %}
+      </ul>
+    </div>
+  </div>
+</nav>

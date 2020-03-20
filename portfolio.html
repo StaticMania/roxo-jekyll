@@ -1,0 +1,53 @@
+---
+layout: default
+title: Portfolio
+description: We build better <span>products</span> to help our clients build better <span>companies</span>
+permalink: '/portfolio'
+---
+<!-- start: project header -->
+<section class="site-project-header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="site-project-header-content">
+          <h1>
+            {{ page.description }}
+          </h1>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <a href="#project" class="site-project-header-action scroll-to">
+          <span>Scroll Down</span>
+          <img src="{{ 'images/arrow-down.svg' | absolute_url }}" alt="arrow-down">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: project header -->
+
+<!-- start: portfolio section -->
+<section class="site-project" id="project">
+  <div class="container">
+    <div class="row">
+      {% assign posts = site.posts | where:'type', 'portfolio' %}
+      {%- for post in posts -%}
+      <div class="col-lg-6 col-md-10 mx-auto">
+        <div class="site-project-item">
+          <div class="site-project-item-thumb">
+            <img src="{{ post.image }}" alt="project-thumb-one">
+          </div>
+          <div class="site-project-item-content">
+            <span>{{ post.category[0] }}</span>
+            <h3>{{ post.title }}</h3>
+            <a href="{{ post.url | absolute_url }}" class="read-more">view project</a>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<!-- end: portfolio section -->
+
+{%- include call-to-action.html -%}

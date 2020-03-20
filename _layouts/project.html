@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<section class="site-project-single-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="site-project-single">
+          <h1>
+            {{ page.title }}
+          </h1>
+          <div class="site-project-single-description">
+            {{ content }}
+          </div>
+          <div class="site-project-single-image">
+            {%- for image in page.project_images -%}
+              <img src="{{ image | absolute_url }}" alt="project image">
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- include call-to-action.html -%}

@@ -1,0 +1,34 @@
+{% if site.call-to-action.enable %}
+{% assign cta = site.call-to-action %}
+<!-- start: call to action section -->
+<section class="site-cta" style="background-image: url('{{ cta.background_image | absolute_url }}');">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="site-cta-title">{{ cta.title }}</h1>
+        <ul class="site-cta-buttons">
+          <li>
+            <a href="{{ cta.primary_button_url | absolute_url }}" class="btn btn-secondary">
+              <span class="btn-area">
+                <span data-text="{{ cta.primary_button }}">
+                  {{ cta.primary_button }}
+                </span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ cta.secondary_button_url | absolute_url }}" class="btn btn-primary">
+              <span class="btn-area">
+                <span data-text="{{ cta.secondary_button }}">
+                  {{ cta.secondary_button }}
+                </span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: call to action section -->
+{% endif %}

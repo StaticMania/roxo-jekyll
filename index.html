@@ -1,0 +1,147 @@
+---
+layout: default
+title: Home
+permalink: '/'
+pagination: 
+  enabled: true
+---
+
+<!-- start: hero section -->
+<section class="site-hero" style="background-image: url({{ 'images/backgrounds/hero-background.jpg' | absolute_url }});">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="site-hero-content text-center">
+          <h6>WE WORK HARD, WE PLAY HARD</h6>
+          <h1>
+            We’re a Design Studio
+            <br>
+            That Belies In the Great Ideas
+          </h1>
+          <ul class="site-hero-content-buttons">
+            <li>
+              <a href="{{ '#project' | absolute_url }}" class="btn btn-secondary scroll-to">
+                <span class="btn-area">
+                  <span data-text="See Our Works">
+                    See Our Works
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/contact' | absolute_url }}" class="btn btn-primary">
+                <span class="btn-area">
+                  <span data-text="Connect with us">
+                    Connect with us
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#counter" class="site-hero-scroll scroll-to">
+    <img src="images/arrow-down.svg" alt="arrow-down">
+  </a>
+</section>
+<!-- end: hero section -->
+
+<!-- start: counter section -->
+<section class="site-counter" id="counter">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2 class="text-white">The Proof is in the Pudding!</h2>
+        </div>
+      </div>
+      {% if site.data.counters.size > 0 %}
+      {% for counter in site.data.counters %}
+      <div class="col-lg-3 col-md-6">
+        <div class="site-counter-item">
+          <span class="site-counter-item-title">{{ counter.title }}</span>
+          <h3 class="site-counter-item-number">{{ counter.count }}</h3>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+<!-- end: counter section -->
+
+<!-- start: portfolio section -->
+<section class="site-project" id="project">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2>OUR RECENT WORKS</h2>
+          <p>Crafting experiences and seeking to make the complex clear & beautiful.</p>
+        </div>
+      </div>
+      {% assign posts = site.posts | where:'type', 'portfolio' %}
+      {%- for post in posts limit: 4 -%}
+      <div class="col-lg-6 col-md-10 mx-auto">
+        <div class="site-project-item">
+          <div class="site-project-item-thumb">
+            <img src="{{ post.image }}" alt="project-thumb-one">
+          </div>
+          <div class="site-project-item-content">
+            <span>{{ post.category[0] }}</span>
+            <h3>{{ post.title }}</h3>
+            <a href="{{ post.url | absolute_url }}" class="read-more">view project</a>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+      <div class="col-12 text-center text-lg-left">
+        <a href="{{ '/portfolio' | absolute_url }}" class="site-project-cta">MORE WORKS</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end: portfolio section -->
+
+{% if site.data.testimonials.enable %}
+<!-- start: testimonial section -->
+<section class="site-testimonial">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2>
+            {{ site.data.testimonials.title }}
+          </h2>
+          <p>
+            {{ site.data.testimonials.subtitle }}
+          </p>
+        </div>
+      </div>
+      {% for testimonial in site.data.testimonials.testimonial_item %}
+      <div class="col-lg-4 col-md-6">
+        <div class="site-testimonial-item">
+          <div class="site-testimonial-item-header">
+            <div class="thumb">
+              <img src="{{ testimonial.thumb | absolute_url }}" alt="user-thumb">
+            </div>
+            <div class="person">
+              <h5>{{ testimonial.name }}</h5>
+              <p>{{ testimonial.company_position }}</p>
+            </div>
+          </div>
+          <p class="site-testimonial-item-body">
+            {{ testimonial.quote }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- end: testimonial section -->
+{% endif %}
+
+{% include call-to-action.html %}
