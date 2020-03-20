@@ -20,7 +20,7 @@ Checkout the live demo [here](https://roxo-jekyll.staticmania.com/)
 
 **Make sure you've `ruby, bundler and jekyll` in your local machine
 
-1. Clone the repository form (https://github.com/StaticMania/roxo-jekyll)[https://github.com/StaticMania/roxo-jekyll]
+1. Clone the repository form `https://github.com/StaticMania/roxo-jekyll`
 
 2. Install dependency using command `bundle install`
 
