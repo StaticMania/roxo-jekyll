@@ -50,4 +50,4 @@ This Repository is licensed under the [MIT](https://github.com/StaticMania/roxo-
 
 ## Hire
 
-Need help to build HUGO websites with your custom requirements. Feel free to [contact](https://staticmania.com/contact/) with us. We provide custom development service for HUGO.
+Need help to build Jekyll websites with your custom requirements. Feel free to [contact](https://staticmania.com/contact/) with us. We provide custom development service for Jekyll.
