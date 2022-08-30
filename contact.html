@@ -18,7 +18,7 @@ form_heading  : "TELL US ABOUT YOUR PROJECT"
       <div class="col-lg-6 ml-auto">
         <div class="site-contact-form">
           <h4>{{ page.form_heading }}</h4>
-          <form id="contact-form" action="{{ site.formspreeFormUrl }}" method="POST">
+          <form id="contact-form" action="{{ site.fabFormUrl }}" method="POST">
             <div class="row">
               <div class="col-lg-6">
                 <input type="text" class="form-control" name="first-name" id="first-name" placeholder="First Name">
@@ -55,6 +55,9 @@ form_heading  : "TELL US ABOUT YOUR PROJECT"
               </div>
             </div>
           </form>
+          <p class="contact-form-generator">
+            <strong>** </strong><a href="https://fabform.io/" target="_blank">Static website forms</a>
+          </p>
         </div>
       </div>
     </div>
