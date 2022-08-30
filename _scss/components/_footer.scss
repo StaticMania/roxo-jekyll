@@ -62,3 +62,21 @@
     }
   }
 }
+
+.footer-copy-right {
+    background-color: $black;
+    padding: 35px 0;
+    p {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: $white;
+      
+    }
+    a{
+      font-size: 13px;
+      font-weight: 600;
+      color: $white;
+    }
+  }
