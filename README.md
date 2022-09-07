@@ -1,7 +1,7 @@
 <h1>Roxo Jekyll</h1>
 <img src="https://user-images.githubusercontent.com/16266381/76162082-10850b80-6164-11ea-8b20-f30b2611f92c.png" alt="screenshot" width="100%">
 
-Roxo Jekyll is a digital agency Jekyll theme for creative agencies,  freelancers, graphic designers, photographers. Can be used for any kind of corporate websites who provides digital services with many expertise such as  Design, Digital Products, Development, Campaign & Content, Employer Branding, Animation & Motion Graphics ,Packaging & Product Design, Retail & Spacial, Print & Editorial Design, Concept/Text, Information Design etc. Roxo Jekyll’s contact form is supported Formspree.
+Roxo Jekyll is a digital agency Jekyll theme for creative agencies,  freelancers, graphic designers, photographers. Can be used for any kind of corporate websites who provides digital services with many expertise such as  Design, Digital Products, Development, Campaign & Content, Employer Branding, Animation & Motion Graphics ,Packaging & Product Design, Retail & Spacial, Print & Editorial Design, Concept/Text, Information Design etc. Roxo Jekyll’s contact form is supported by [fabform.io](https://fabform.io)
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ Checkout the live demo [here](https://roxo-jekyll.staticmania.com/)
 * Blog Support.
 * Well formatted code.
 * Easy Customization.
-* Formspree Contact form.
+* FabForm.io [static website form](https://fabform.io)
 * Crafted for Design Agency/ Portfolio
 
 ## Support
